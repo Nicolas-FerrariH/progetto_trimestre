@@ -16,3 +16,10 @@ function db_connect()
     return $conn;
 }
 
+function insert_paziente($conn, $nome,$cognome,$data)
+{
+    $sql = "INSERT INTO paziente (nome, cognome, dataNascita)
+    VALUES ('$nome', '$cognome', '$data')";
+    return $conn->query($sql);
+
+}
