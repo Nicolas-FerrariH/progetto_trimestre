@@ -1,0 +1,23 @@
+body{
+    background-color: #afcce6;  /*43637a*/
+}
+
+.nav_index{
+    margin-top:35px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav_index a{
+    text-decoration: none;
+    color: white;
+    background-color: #43637a;
+    text-align: center;
+    padding: 15px;
+    xborder-radius: 20%;
+    xmargin: 10px 10px 10px 10px ;
+}
+.dx{
+    display: block;
+    float: right ;
+}
