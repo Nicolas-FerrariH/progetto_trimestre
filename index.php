@@ -11,8 +11,12 @@ $conn=db_connect();
     </head>
     <body>
         <div class="nav_index">
-            <a href="index.php">Ambulatorio PICC</a>
+            <a class="sx" href="index.php">Ambulatorio PICC</a>
             <a class="dx" href="login.php">Login</a>
         </div>
+        <a class="cont_button" href="user.php">
+                Statistiche Pubbliche
+        </a>
+        
     </body>
 </html>

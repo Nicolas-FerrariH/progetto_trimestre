@@ -1,23 +1,49 @@
 body{
     background-color: #afcce6;  /*43637a*/
+    overflow: hidden;
 }
-
+a{
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
 .nav_index{
+    display: block;
     margin-top:35px;
-    text-decoration: none;
-    color: white;
+    
 }
 
+.nav_index {
+    
+    height: 100px;
+    padding: 30px;
+    margin:auto;
+}
 .nav_index a{
-    text-decoration: none;
-    color: white;
+    
     background-color: #43637a;
+    width: 20%;
+    height: 50%;
     text-align: center;
-    padding: 15px;
-    xborder-radius: 20%;
-    xmargin: 10px 10px 10px 10px ;
+    line-height: 200%;
+    border-radius: 20%;
 }
 .dx{
+    float: right;
+}
+.sx{
+    
+    float: left ;
+}
+.cont_button{
+    
     display: block;
-    float: right ;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #43637a;
+    width: 20vw;
+    height: 20vw;
+    text-align: center;
+    line-height: 20vw;
+    border-radius: 100%;
 }
