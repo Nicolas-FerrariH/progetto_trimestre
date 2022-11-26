@@ -23,3 +23,19 @@ function insert_paziente($conn, $nome,$cognome,$data)
     return $conn->query($sql);
 
 }
+
+function try_login($conn,$username,$password){
+
+    $user=$conn->real_escape_string($username);
+    $pw=$conn->real_escape_string($password);
+    $hash=password_hash($pw, PASSWORD_BCRYPT);
+    if(password_verify($pw,$hash))
+    {
+        require("admin.php");
+    }
+    else
+    { 
+        echo "Errore Username o Password errati";
+        require("login.php");
+    }
+}

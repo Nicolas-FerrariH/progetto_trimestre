@@ -1,4 +1,5 @@
 <?php
+require('_config.php');
 require("_dbFunc.php");
 $conn=db_connect();
 
