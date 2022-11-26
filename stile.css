@@ -6,6 +6,8 @@ a{
     text-decoration: none;
     color: white;
     font-size: x-large;
+    background-color: #43637a;
+    text-align: center;
 }
 .nav_index{
     display: block;
@@ -21,10 +23,8 @@ a{
 }
 .nav_index a{
     
-    background-color: #43637a;
     width: 20%;
     height: 50%;
-    text-align: center;
     line-height: 200%;
     border-radius: 20%;
 }
@@ -40,10 +40,8 @@ a{
     display: block;
     margin: auto;
     margin-top: 50px;
-    background-color: #43637a;
     width: 20vw;
     height: 20vw;
-    text-align: center;
     line-height: 20vw;
     border-radius: 100%;
 }
