@@ -5,7 +5,8 @@ $pazienti=SelectAllPazienti($conn);
 ?>
 <?php require('_header.php');?>
         <div class="contain_admin">
-
+            <a class="sx" href="nuovo_paziente.php">Nuovo Paziente</a>
+            <img src="img/login_Utente_Blu.jpg" alt="">
         </div>
 
         <div class="table_pazienti">
