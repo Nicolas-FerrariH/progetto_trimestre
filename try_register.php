@@ -2,15 +2,14 @@
 require('_config.php');
 require('_dbFunc.php');
 
-$conn=db_connect();
+
 
 $user=$_GET["user"];
 $pw=$_GET["pw"];
+$conn=db_connect();
 
 
+register($conn,$user,$pw);
 
-
-trylogin($conn,$user,$pw);
-
-
+require("login.php");
 ?>

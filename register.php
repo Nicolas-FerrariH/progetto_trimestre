@@ -15,15 +15,15 @@
         <div class="form_login">
             <img src="img/login_Utente.jpg" alt="Login">
             <br><br>
-            <form method="get" action="try_login.php">
+            <form method="get" action="try_register.php">
                 <label>Username:</label> <br>
-                <input type="text" name="user" value="" placeholder="Username " required><br>
+                <input type="text" name="user" value="" placeholder="Username" required><br>
                 <label>Password:</label><br>
                 <input type="text" name="pw" value="" placeholder="Password" required><br>
-                <button type="submit">Login</button><br>
+                <button type="submit">Register</button><br>
             </form>
             <br>
-            <a href="register.php">Registrazione Qui</a>
+            <a href="login.php">Login Qui</a>
         </div>
         
     </body>
