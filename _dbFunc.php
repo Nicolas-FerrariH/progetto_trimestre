@@ -39,12 +39,15 @@ function trylogin($conn,$user,$pw)
     $hash = user_get_hash($conn,$user);
     if(password_verify($pw,$hash))
     {
-        require("admin.php");
+        session_start();
+        $_SESSION["user"]=$user;
+        $_SESSION["pw"]=$pw;
+        header('Location: admin.php');
     }
     else
     { 
         echo "Errore username o Password errati";
-        require("login.php");
+        header('Location: login.php');
     }
 }
 
@@ -79,4 +82,10 @@ function tipopicc($conn,$idPICC){
     $res=$result->fetch_assoc();
     $stringafinale= implode("", $res);
     return $stringafinale;
+}
+
+function idpic($conn,$tipo){
+    $sql="SELECT idPicc FROM picc where tipo= '$tipo'";
+    $result=$conn->query($sql);
+    return $result;
 }

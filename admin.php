@@ -1,7 +1,11 @@
 <?php
+require('_config.php');
+require('_dbFunc.php');
 $conn=db_connect();
 
 $pazienti=SelectAllPazienti($conn);
+
+
 ?>
 <?php require('_header.php');?>
         <div class="contain_admin">

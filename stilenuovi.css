@@ -1,0 +1,54 @@
+body{
+    background-color: #afcce6;  /*43637a*/
+    
+}
+h1{
+    font-size: 65px;
+    color:#43637a;
+}
+.form_nuovo{
+    margin-top: 50px;
+    margin: auto;
+    width: 45%;
+    height: 60%;
+    text-align: center;
+    padding:60px;
+}
+form{
+    width: 100%;
+    
+}
+input{
+    margin: 10px;
+    margin-top: 0;
+    border-radius: 10%;
+    border: none ;
+    width: 70%;
+    height: 10%;
+    font-size: large;
+}
+label{
+    margin: 10px;
+    margin-bottom: 0;
+    font-size: x-large;
+    text-align: left;
+    color: white;
+}
+button{
+    margin-top: 10px;
+    color: black;
+    width: 50%;
+    height: 10%;
+    font-size: x-large;
+    border-radius: 20%;
+    border: none ;
+}
+
+.nav_admin{
+    background-color: #43637a;
+    width: 100%;
+    height: 105px;
+}
+
+
+
