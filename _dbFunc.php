@@ -22,12 +22,21 @@ function insert_paziente($conn, $nome,$cognome,$data)
     return $conn->query($sql);
 
 }
+function user_get_hash($conn,$user)
+{
+    $sql="SELECT password FROM admin where username='$user'";
+    $result=$conn->query($sql);
+
+    $res=$result-> fetch_assoc();
+    $stringafinale= implode("", $res);
+    return $stringafinale;
+}
 
 function trylogin($conn,$user,$pw)
 {
     $user=$conn->real_escape_string($user);
     $pw=$conn->real_escape_string($pw);
-    $hash=password_hash($pw, PASSWORD_BCRYPT);
+    $hash = user_get_hash($conn,$user);
     if(password_verify($pw,$hash))
     {
         require("admin.php");
