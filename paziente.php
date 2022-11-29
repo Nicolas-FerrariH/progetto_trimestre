@@ -2,6 +2,7 @@
 require('_config.php');
 require('_dbFunc.php');
 $conn=db_connect();
+session_start();
 
 $id=$_GET["id"];
 $sql="SELECT * FROM paziente where idP='$id'";
@@ -18,7 +19,7 @@ $picc=SelectAllPICC($conn,$id);
             <p>Nome:<?=$paz["nome"]?></p>
             <p>Cognome:<?=$paz["cognome"]?></p>
             <p>Data di Nascita:<?=$paz["dataNascita"]?></p>
-            
+            <a class="dx" href="nuovo_picc.php">Nuovo Picc</a>
         </div>
         <br>
         <div class="table_picc">
