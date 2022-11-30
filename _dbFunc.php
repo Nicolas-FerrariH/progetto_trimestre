@@ -20,14 +20,30 @@ function insert_paziente($conn, $nome,$cognome,$data)
     $sql = "INSERT INTO paziente (nome, cognome, dataNascita)
     VALUES ('$nome', '$cognome', '$data')";
     return $conn->query($sql);
-
 }
+
+function insert_picc($conn, $idP,$tipo,$datapos,$datarim,$motivorim)
+{
+    $idPicc=idpicc($conn,$tipo);
+    if($motivorim=='NULL'){
+        echo "daje";
+        $sql = "INSERT INTO `applicazione` (`idP`, `idPicc`, `dataPosizionamento`) 
+        VALUES ('$idP', '$idPicc', '$datapos')";
+    }
+    else{
+        echo "nunmulla";
+        $sql = "INSERT INTO `applicazione` (`idP`, `idPicc`, `dataPosizionamento`, `dataRimozione`, `causarimozione`) 
+    VALUES ('$idP', '$idPicc', '$datapos', '$datarim', '$motivorim')";
+    }
+    
+    return $conn->query($sql);
+}
+
 function user_get_hash($conn,$user)
 {
     $sql="SELECT password FROM admin where username='$user'";
     $result=$conn->query($sql);
-
-    $res=$result-> fetch_assoc();
+        $res=$result-> fetch_assoc();
     $stringafinale= implode("", $res);
     return $stringafinale;
 }
@@ -84,8 +100,38 @@ function tipopicc($conn,$idPICC){
     return $stringafinale;
 }
 
-function idpic($conn,$tipo){
+function idpicc($conn,$tipo){
     $sql="SELECT idPicc FROM picc where tipo= '$tipo'";
     $result=$conn->query($sql);
-    return $result;
+    $res=$result->fetch_assoc();
+    $stringafinale= implode("", $res);
+    return $stringafinale;
+}
+
+function userexist($conn,$user){
+    $sql="SELECT * FROM admin where username= '$user'";
+    $result=$conn->query($sql);
+    $rows=$result-> fetch_all(MYSQLI_ASSOC);
+    if(count($rows)>0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function SelApplicazione($conn,$idP,$idPicc,$dp){
+    $sql="SELECT * FROM applicazione where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp'";
+    $result=$conn->query($sql);
+
+    $row=$result->fetch_assoc();
+    return $row;
+}
+
+function update_picc($conn, $idP,$tipo,$dp,$dr,$motivo){
+    $idPicc=idpicc($conn,$tipo);
+    
+    $sql="UPDATE `applicazione` SET `causarimozione` = 'tromboflebiti' 
+    WHERE `applicazione`.`idP` = 1 AND `applicazione`.`idPicc` = 3 AND `applicazione`.`dataPosizionamento` = '2022-08-31'";
+    
 }

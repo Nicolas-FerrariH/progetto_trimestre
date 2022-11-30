@@ -19,7 +19,7 @@ $picc=SelectAllPICC($conn,$id);
             <p>Nome:<?=$paz["nome"]?></p>
             <p>Cognome:<?=$paz["cognome"]?></p>
             <p>Data di Nascita:<?=$paz["dataNascita"]?></p>
-            <a class="dx" href="nuovo_picc.php">Nuovo Picc</a>
+            <a class="dx" href="nuovo_picc.php?idP=<?=$id?>">Nuovo Picc</a>
         </div>
         <br>
         <div class="table_picc">
@@ -41,16 +41,19 @@ $picc=SelectAllPICC($conn,$id);
                 <?php foreach($picc as $pp){?>
                 <tr>
                     <td>
-                    <a href="PICC.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=tipopicc($conn,$pp["idPicc"])?></a>
+                    <a href="picc.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=tipopicc($conn,$pp["idPicc"])?></a>
                     </td>
                     <td>
-                    <a href="PICC.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["dataPosizionamento"]?></a>
+                    <a href="picc.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["dataPosizionamento"]?></a>
                     </td>
                     <td>
-                    <a href="PICC.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["dataRimozione"]?></a>
+                    <a href="picc.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["dataRimozione"]?></a>
                     </td>
                     <td>
-                    <a href="PICC.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["causarimozione"]?></a>
+                    <a href="picc.php?id=<?=$pp["idP"]?>&pw=<?=$pp["dataPosizionamento"]?>"><?=$pp["causarimozione"]?></a>
+                    </td>
+                    <td>
+                        <a href="modifica_picc.php?idP=<?=$id?>&idPicc=<?=$pp["idPicc"]?>&dp=<?=$pp["dataPosizionamento"]?>">Modifica</a>
                     </td>
                 </tr>
                 <?php }?>

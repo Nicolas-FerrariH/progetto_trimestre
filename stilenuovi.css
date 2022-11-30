@@ -50,5 +50,14 @@ button{
     height: 105px;
 }
 
+select{
+    margin: 10px;
+    margin-top: 0;
+    border-radius: 10%;
+    border: none ;
+    width: 70%;
+    height: 10%;
+    font-size: large;
+}
 
 

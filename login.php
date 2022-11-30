@@ -15,11 +15,11 @@
         <div class="form_login">
             <img src="img/login_Utente.jpg" alt="Login">
             <br><br>
-            <form method="get" action="try_login.php">
+            <form method="get" action="try_login.php" autocomplete="off">
                 <label>Username:</label> <br>
                 <input type="text" name="user" value="" placeholder="Username " required><br>
                 <label>Password:</label><br>
-                <input type="text" name="pw" value="" placeholder="Password" required><br>
+                <input type="password" name="pw" value="" placeholder="Password" required><br>
                 <button type="submit">Login</button><br>
             </form>
             <br>

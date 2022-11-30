@@ -9,8 +9,13 @@ $pw=$_GET["pw"];
 
 
 
-
-trylogin($conn,$user,$pw);
+if (userexist($conn,$user)){
+    trylogin($conn,$user,$pw);
+}
+else{
+    echo "Username inesistente";
+    header('Location: login.php');
+}
 
 
 ?>

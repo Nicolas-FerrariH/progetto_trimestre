@@ -15,7 +15,7 @@
         <div class="form_login">
             <img src="img/login_Utente.jpg" alt="Login">
             <br><br>
-            <form method="get" action="try_register.php">
+            <form method="get" action="try_register.php" autocomplete="off">
                 <label>Username:</label> <br>
                 <input type="text" name="user" value="" placeholder="Username" required><br>
                 <label>Password:</label><br>
