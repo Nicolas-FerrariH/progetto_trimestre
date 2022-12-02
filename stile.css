@@ -101,7 +101,9 @@ button{
     margin: 50px;
     border-radius: 20%;
 }
-
+table,td,th,tr{
+    border: solid black 3px;
+}
 table{
     border-collapse: collapse;
     width: 100%;
@@ -109,7 +111,7 @@ table{
     
 }
 td,th,tr{
-    border: solid black 3px;
+    
     padding: 5px;
     font-size:20px;
 }
@@ -128,17 +130,16 @@ td,th,tr{
 
 .table_med{
     position: relative;
-    width: 47%;
-    max-width: 48%;
+    width: 49%;
     overflow-y: auto;
     float: left;
+    max-height: 60%;
 }
 
 .table_comp{
     position: relative;
-    width: 47%;
-    max-width: 48%;
+    width: 49%;
     overflow-y: auto;
     float: right;
-    
+    max-height: 60%;
 }

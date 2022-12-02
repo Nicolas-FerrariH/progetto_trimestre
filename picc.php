@@ -35,7 +35,7 @@ $paz=$result-> fetch_assoc();
             <table>
                     <tr>
                         <th>
-                            <a href="nuova_medicazione?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dp=<?=$dp?>">Aggiungi medicazione</a>
+                            <a href="nuova_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dp=<?=$dp?>">Aggiungi medicazione</a>
                         </th>
                         <th>
                             Data Medicazione
@@ -73,7 +73,7 @@ $paz=$result-> fetch_assoc();
             <table>
                     <tr>
                         <th>
-                            <a href="nuova_complicanza?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dp=<?=$dp?>">Aggiungi complicanza</a>
+                            <a href="nuova_complicanza.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dp=<?=$dp?>">Aggiungi complicanza</a>
                         </th>
                         <th>
                             Data complicanza

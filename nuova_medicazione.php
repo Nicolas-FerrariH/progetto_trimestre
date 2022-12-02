@@ -19,7 +19,7 @@ $dp=$_GET["dp"];
         </div>
         <div class="form_nuovo">
             <h1>Nuova Medicazione</h1>
-            <form method="get" action="aggiungi_med.php" autocomplete="off">
+            <form method="get" action="aggiungi_medicazione.php" autocomplete="off">
                 
                 <label>Data Medicazione:</label><br>
                 <input type="date" name="dataMed" value=""><br>
@@ -32,14 +32,14 @@ $dp=$_GET["dp"];
                 
                 <label>ECOG:</label><br>
                 <select id="ecog" name="ecog" >
-                    <option value="0" default>-</option>
-                    <option value="1">fine uso</option>
-                    <option value="2">complicanze infettive</option>
-                    <option value="3">tromboflebiti</option>
+                    <option value="0" default>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                 </select><br>
 
                 <label>Nota (solo se medicazione non standard): </label><br>
-                <input type="text" name="nota" value="NULL"><br>
+                <input type="text" name="nota" placeholder="Inserire la nota qua" value="" ><br>
                 
                 
                 <input type="hidden" name="idP" value="<?=$idP?>"><br>

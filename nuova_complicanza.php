@@ -18,14 +18,14 @@ $dp=$_GET["dp"];
             <a href="admin.php"><img src="img/casetta.jpg" alt=""></a>
         </div>
         <div class="form_nuovo">
-            <h1>Nuova Medicazione</h1>
+            <h1>Nuova Complicanza</h1>
             <form method="get" action="aggiungi_complicanza.php" autocomplete="off">
                 
                 <label>Data Complicanza:</label><br>
                 <input type="date" name="datacomp" value=""><br>
                 
                 <label>Descrizione: </label><br>
-                <input type="text" name="desc" value="NULL"><br>
+                <input type="text" name="desc" value="" placeholder="Inserire qua la descrizione"><br>
                 
                 
                 <input type="hidden" name="idP" value="<?=$idP?>"><br>

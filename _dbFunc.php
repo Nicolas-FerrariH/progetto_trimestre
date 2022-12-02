@@ -37,7 +37,7 @@ function insert_picc($conn, $idP,$idPicc,$datapos,$datarim,$motivorim)
 }
 function insert_med($conn, $idP,$idPicc,$dp,$dm,$tipomed,$ecog,$nota)
 {
-    if($nota=='NULL'){
+    if($nota==""){
         $sql = "INSERT INTO `medicazione` (`idP`, `idPicc`, `tipo`, `ECOG`, `nota`, `dataMedicazione`, `dataPosizionamento`) 
         VALUES ('$idP', '$idPicc', '$tipomed', '$ecog', NULL, '$dm','$dp')";
     }
