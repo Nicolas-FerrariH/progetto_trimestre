@@ -18,34 +18,35 @@ $dp=$_GET["dp"];
             <a href="admin.php"><img src="img/casetta.jpg" alt=""></a>
         </div>
         <div class="form_nuovo">
-            <h1>Nuovo PICC</h1>
-            <form method="get" action="aggiungi_picc.php" autocomplete="off">
-                <label>Tipo del Picc:</label><br>
-                <select id="tipo" name="tipo">
-                    <option value="minint monolume 4fr ">minint monolume 4fr </option>
-                    <option value="alfamed monolume 4fr">alfamed monolume 4fr</option>
-                    <option value="bow monolume 4fr">bow monolume 4fr</option>
-                    <option value="bow bilume 5fr">bow bilume 5fr</option>
+            <h1>Nuova Medicazione</h1>
+            <form method="get" action="aggiungi_med.php" autocomplete="off">
+                
+                <label>Data Medicazione:</label><br>
+                <input type="date" name="dataMed" value=""><br>
+                
+                <label>Tipo della Medicazione:</label><br>
+                <select id="tipomed" name="tipomed">
+                    <option value="Standard">Standard </option>
+                    <option value="Non standard (nota)">Non standard (inserire nota)</option>
+                </select><br>
+                
+                <label>ECOG:</label><br>
+                <select id="ecog" name="ecog" >
+                    <option value="0" default>-</option>
+                    <option value="1">fine uso</option>
+                    <option value="2">complicanze infettive</option>
+                    <option value="3">tromboflebiti</option>
                 </select><br>
 
-                <label>Data di posizionamento:</label><br>
-                <input type="date" name="datapos" value="" required><br>
+                <label>Nota (solo se medicazione non standard): </label><br>
+                <input type="text" name="nota" value="NULL"><br>
                 
-                <label>Data di rimozione:</label><br>
-                <input type="date" name="datarim" value="NULL"><br>
                 
-                <label>Motivo della rimozione:</label><br>
-                <select id="motivo" name="motivo" >
-                    <option value="NULL" default>-</option>
-                    <option value="fine uso">fine uso</option>
-                    <option value="complicanze infettive">complicanze infettive</option>
-                    <option value="tromboflebiti">tromboflebiti</option>
-                    <option value="malfunzionamento">malfunzionamento</option>
-                    <option value="dislocazione accidentale">dislocazione accidentale</option>
-                </select><br>
-
                 <input type="hidden" name="idP" value="<?=$idP?>"><br>
-                <button type="submit">Aggiungi Picc</button><br>
+                <input type="hidden" name="idPicc" value="<?=$idPicc?>"><br>
+                <input type="hidden" name="dp" value="<?=$dp?>"><br>
+
+                <button type="submit">Aggiungi Medicazione</button><br>
             </form>
         </div>
         

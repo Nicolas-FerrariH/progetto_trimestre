@@ -22,9 +22,8 @@ function insert_paziente($conn, $nome,$cognome,$data)
     return $conn->query($sql);
 }
 
-function insert_picc($conn, $idP,$tipo,$datapos,$datarim,$motivorim)
+function insert_picc($conn, $idP,$idPicc,$datapos,$datarim,$motivorim)
 {
-    $idPicc=idpicc($conn,$tipo);
     if($motivorim=='NULL'){
         $sql = "INSERT INTO `applicazione` (`idP`, `idPicc`, `dataPosizionamento`) 
         VALUES ('$idP', '$idPicc', '$datapos')";
@@ -36,7 +35,26 @@ function insert_picc($conn, $idP,$tipo,$datapos,$datarim,$motivorim)
     
     return $conn->query($sql);
 }
-
+function insert_med($conn, $idP,$idPicc,$dp,$dm,$tipomed,$ecog,$nota)
+{
+    if($nota=='NULL'){
+        $sql = "INSERT INTO `medicazione` (`idP`, `idPicc`, `tipo`, `ECOG`, `nota`, `dataMedicazione`, `dataPosizionamento`) 
+        VALUES ('$idP', '$idPicc', '$tipomed', '$ecog', NULL, '$dm','$dp')";
+    }
+    else{
+        $sql = "INSERT INTO `medicazione` (`idP`, `idPicc`, `tipo`, `ECOG`, `nota`, `dataMedicazione`, `dataPosizionamento`) 
+        VALUES ('$idP', '$idPicc', '$tipomed', '$ecog', $nota, '$dm','$dp')";
+    }
+    
+    return $conn->query($sql);
+}
+function insert_comp($conn, $idP,$idPicc,$dp,$dc,$desc)
+{
+    $sql = "INSERT INTO `complicanza` (`idP`, `idPicc`, `dataComplicanza`, `descrizione`, `dataPosizionamento`)
+            VALUES ('$idP', '$idPicc', '$dc', '$desc', '$dp')";
+    
+    return $conn->query($sql);
+}
 function user_get_hash($conn,$user)
 {
     $sql="SELECT password FROM admin where username='$user'";
@@ -102,6 +120,7 @@ function ricercaidpicc($conn,$tipo){
     $sql="SELECT idPicc FROM picc where tipo='$tipo'";
     $result=$conn->query($sql);
     $res=$result->fetch_assoc();
+    var_dump($res);
     $numeropicc= implode("", $res);
     return $numeropicc;
 }
@@ -126,8 +145,7 @@ function SelApplicazione($conn,$idP,$idPicc,$dp){
     return $row;
 }
 
-function update_picc($conn, $idP,$tipo,$dp,$dr,$motivo){
-    $idPicc=ricercaidpicc($conn,$tipo);
+function update_picc($conn, $idP,$idPicc,$dp,$dr,$motivo){
     
     $sql="UPDATE applicazione SET dataRimozione = '$dr', causarimozione = '$motivo'
     WHERE idP = '$idP' AND idPicc = '$idPicc' AND dataPosizionamento = '$dp'";

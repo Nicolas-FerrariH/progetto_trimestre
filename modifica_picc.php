@@ -30,10 +30,10 @@ $motivo=$interaapp["causarimozione"];
             <form method="get" action="update_picc.php" autocomplete="off">
                 <label>Tipo del Picc:</label><br>
                 <select id="tipo" name="tipo" >
-                    <option value="minint monolume 4fr" <?php echo $tipo=='minint monolume 4fr'?  "selected" : "";?>>minint monolume 4fr </option>
-                    <option value="alfamed monolume 4fr" <?php echo $tipo=='alfamed monolume 4fr'?  "selected" :  "";?>>alfamed monolume 4fr</option>
-                    <option value="bow monolume 4fr" <?php echo $tipo=='bow monolume 4fr'?  "selected" :  "";?>>bow monolume 4fr</option>
-                    <option value="bow bilume 5fr" <?php  echo $tipo=='bow bilume 5fr'?  "selected" :  "";?>>bow bilume 5fr</option>
+                    <option value="1" <?php echo $tipo=='minint monolume 4fr'?  "selected" : "";?>>minint monolume 4fr </option>
+                    <option value="2" <?php echo $tipo=='alfamed monolume 4fr'?  "selected" :  "";?>>alfamed monolume 4fr</option>
+                    <option value="3" <?php echo $tipo=='bow monolume 4fr'?  "selected" :  "";?>>bow monolume 4fr</option>
+                    <option value="4" <?php  echo $tipo=='bow bilume 5fr'?  "selected" :  "";?>>bow bilume 5fr</option>
                 </select><br>
 
                 <label>Data di posizionamento:</label><br>

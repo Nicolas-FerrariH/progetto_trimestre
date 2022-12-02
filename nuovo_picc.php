@@ -18,10 +18,10 @@ $idP=$_GET["idP"];
             <form method="get" action="aggiungi_picc.php" autocomplete="off">
                 <label>Tipo del Picc:</label><br>
                 <select id="tipo" name="tipo">
-                    <option value="minint monolume 4fr ">minint monolume 4fr </option>
-                    <option value="alfamed monolume 4fr">alfamed monolume 4fr</option>
-                    <option value="bow monolume 4fr">bow monolume 4fr</option>
-                    <option value="bow bilume 5fr">bow bilume 5fr</option>
+                    <option value="1">minint monolume 4fr </option>
+                    <option value="2">alfamed monolume 4fr</option>
+                    <option value="3">bow monolume 4fr</option>
+                    <option value="4">bow bilume 5fr</option>
                 </select><br>
 
                 <label>Data di posizionamento:</label><br>
