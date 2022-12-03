@@ -9,8 +9,8 @@ $idPicc=$_GET["idPicc"];
 $dp=$_GET["dp"];
 $tipo=tipopicc($conn,$idPicc);
 
-$listaComp=SelComp($conn,$idP,$idPicc,$dp);
-$listaMed=SelMed($conn,$idP,$idPicc,$dp);
+$listaComp=SelAllComp($conn,$idP,$idPicc,$dp);
+$listaMed=SelAllMed($conn,$idP,$idPicc,$dp);
 
 
 
@@ -54,16 +54,16 @@ $paz=$result-> fetch_assoc();
                     <tr>
                         <td></td>
                         <td>
-                            <a href=""><?=$m["dataMedicazione"]?></a>
+                            <a href="modifica_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dm=<?=$m["dataMedicazione"]?>"><?=$m["dataMedicazione"]?></a>
                         </td>
                         <td>
-                            <a href=""><?=$m["tipo"]?></a>
+                            <a href="modifica_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dm=<?=$m["dataMedicazione"]?>"><?=$m["tipo"]?></a>
                         </td>
                         <td>
-                            <a href=""><?=$m["ECOG"]?></a>
+                            <a href="modifica_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dm=<?=$m["dataMedicazione"]?>"><?=$m["ECOG"]?></a>
                         </td>
                         <td>
-                            <a href=""><?=$m["nota"]?></a>
+                            <a href="modifica_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dm=<?=$m["dataMedicazione"]?>"><?=$m["nota"]?></a>
                         </td>
                     </tr>
                     <?php }?>
@@ -86,10 +86,10 @@ $paz=$result-> fetch_assoc();
                     <tr>
                     <td></td>
                         <td>
-                            <a href=""><?=$c["dataComplicanza"]?></a>
+                            <a href="modifica_complicanza.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dc=<?=$c["dataComplicanza"]?>"><?=$c["dataComplicanza"]?></a>
                         </td>
                         <td>
-                            <a href=""><?=$c["descrizione"]?></a>
+                            <a href="modifica_complicanza.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dc=<?=$c["dataComplicanza"]?>"><?=$c["descrizione"]?></a>
                         </td>
                     </tr>
                     <?php }?>

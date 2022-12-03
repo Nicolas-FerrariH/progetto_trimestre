@@ -9,7 +9,13 @@ $pw=$_GET["pw"];
 $conn=db_connect();
 
 
-register($conn,$user,$pw);
+if (userexist($conn,$user)){
+    echo "Username già esistente inserirne un altro";
+    header('Location: register.php');
+}
+else{
+    tryregister($conn,$user,$pw);
+    header('Location: login.php');
+}
 
-require("login.php");
 ?>

@@ -37,7 +37,7 @@ $motivo=$interaapp["causarimozione"];
                 </select><br>
 
                 <label>Data di posizionamento:</label><br>
-                <input type="date" name="datapos" value="<?=$dp?>" required><br>
+                <input type="date" name="datapos" value="<?=$dp?>" readonly><br>
                 
                 <label>Data di rimozione:</label><br>
                 <input type="date" name="datarim" value="<?=$dr?>"><br>

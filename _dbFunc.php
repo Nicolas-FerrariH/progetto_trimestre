@@ -43,7 +43,7 @@ function insert_med($conn, $idP,$idPicc,$dp,$dm,$tipomed,$ecog,$nota)
     }
     else{
         $sql = "INSERT INTO `medicazione` (`idP`, `idPicc`, `tipo`, `ECOG`, `nota`, `dataMedicazione`, `dataPosizionamento`) 
-        VALUES ('$idP', '$idPicc', '$tipomed', '$ecog', $nota, '$dm','$dp')";
+        VALUES ('$idP', '$idPicc', '$tipomed', '$ecog', '$nota', '$dm','$dp')";
     }
     
     return $conn->query($sql);
@@ -83,7 +83,7 @@ function trylogin($conn,$user,$pw)
     }
 }
 
-function register($conn,$user,$pw){
+function tryregister($conn,$user,$pw){
     $user=$conn->real_escape_string($user);
     $pw=$conn->real_escape_string($pw);
     $hash=password_hash($pw, PASSWORD_BCRYPT);
@@ -99,14 +99,7 @@ function SelectAllPazienti($conn)
     $rows=$result-> fetch_all(MYSQLI_ASSOC);
     return $rows;
 }
-function SelectAllPICC($conn,$idP)
-{
-    $sql="SELECT * FROM applicazione where idP='$idP' order by dataPosizionamento desc";
-    $result=$conn->query($sql);
 
-    $rows=$result-> fetch_all(MYSQLI_ASSOC);
-    return $rows;
-}
 
 function tipopicc($conn,$idPICC){
     $sql="SELECT tipo FROM picc where idPicc= '$idPICC'";
@@ -144,6 +137,21 @@ function SelApplicazione($conn,$idP,$idPicc,$dp){
     $row=$result->fetch_assoc();
     return $row;
 }
+function SelMed($conn,$idP,$idPicc,$dm){
+    $sql="SELECT * FROM medicazione where idP='$idP' and idPicc='$idPicc' and dataMedicazione='$dm'";
+    $result=$conn->query($sql);
+
+    $row=$result->fetch_assoc();
+    return $row;
+}
+function SelComp($conn,$idP,$idPicc,$dc){
+    $sql="SELECT * FROM complicanza where idP='$idP' and idPicc='$idPicc' and dataComplicanza='$dc'";
+    $result=$conn->query($sql);
+
+    $row=$result->fetch_assoc();
+    return $row;
+}
+
 
 function update_picc($conn, $idP,$idPicc,$dp,$dr,$motivo){
     
@@ -152,8 +160,22 @@ function update_picc($conn, $idP,$idPicc,$dp,$dr,$motivo){
     
     $result=$conn->query($sql);
 }
+function update_med($conn, $idP,$idPicc,$dp,$dm,$tipomed,$ecog,$nota){
+    
+    $sql="UPDATE medicazione SET tipo = '$tipomed', `ECOG` = '$ecog', `nota` = '$nota' 
+    WHERE idP = '$idP' AND idPicc = '$idPicc' AND dataMedicazione = '$dm'";
+    
+    $result=$conn->query($sql);
+}
+function update_comp($conn, $idP,$idPicc,$dp,$dc,$desc){
+    
+    $sql="UPDATE complicanza SET descrizione = '$desc' 
+    WHERE idP = '$idP' AND idPicc = '$idPicc' AND dataComplicanza = '$dc'";
+    
+    $result=$conn->query($sql);
+}
 
-function SelMed($conn,$idP,$idPicc,$dp){
+function SelAllMed($conn,$idP,$idPicc,$dp){
     
     $sql="SELECT * FROM medicazione where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataMedicazione";
     $result=$conn->query($sql);
@@ -161,10 +183,18 @@ function SelMed($conn,$idP,$idPicc,$dp){
     $med=$result-> fetch_all(MYSQLI_ASSOC);
     return $med;
 }
-function SelComp($conn,$idP,$idPicc,$dp){
+function SelAllComp($conn,$idP,$idPicc,$dp){
     $sql="SELECT * FROM complicanza where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataComplicanza";
     $result=$conn->query($sql);
 
     $comp=$result-> fetch_all(MYSQLI_ASSOC);
     return $comp;
+}
+function SelectAllPICC($conn,$idP)
+{
+    $sql="SELECT * FROM applicazione where idP='$idP' order by dataPosizionamento desc";
+    $result=$conn->query($sql);
+
+    $rows=$result-> fetch_all(MYSQLI_ASSOC);
+    return $rows;
 }

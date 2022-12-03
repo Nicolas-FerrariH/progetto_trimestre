@@ -13,7 +13,7 @@
             <a class="sx" href="index.php">Ambulatorio PICC</a>
         </div>
         <div class="form_login">
-            <img src="img/login_Utente.jpg" alt="Login">
+            <img src="img/register_Utente.jpg" alt="Register">
             <br><br>
             <form method="get" action="try_register.php" autocomplete="off">
                 <label>Username:</label> <br>
