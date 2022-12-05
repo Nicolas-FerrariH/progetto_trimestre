@@ -176,14 +176,14 @@ function update_comp($conn, $idP,$idPicc,$dp,$dc,$desc){
 
 function SelAllMed($conn,$idP,$idPicc,$dp){
     
-    $sql="SELECT * FROM medicazione where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataMedicazione";
+    $sql="SELECT * FROM medicazione where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataMedicazione desc";
     $result=$conn->query($sql);
 
     $med=$result-> fetch_all(MYSQLI_ASSOC);
     return $med;
 }
 function SelAllComp($conn,$idP,$idPicc,$dp){
-    $sql="SELECT * FROM complicanza where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataComplicanza";
+    $sql="SELECT * FROM complicanza where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp' order by dataComplicanza desc";
     $result=$conn->query($sql);
 
     $comp=$result-> fetch_all(MYSQLI_ASSOC);

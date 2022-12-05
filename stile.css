@@ -145,6 +145,7 @@ td,th,tr{
 }
 
 ul {
+    font-size: xx-large;
     list-style-type: none;
     margin: 0;
     padding: 0;
