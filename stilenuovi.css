@@ -60,4 +60,15 @@ select{
     font-size: large;
 }
 
-
+a.elimina {
+    text-decoration: none;
+    color: white;
+    background-color: #43637a;
+    text-align: center;
+    float: left;
+    font-size: x-large;
+    width: 23%;
+    height: 9%;
+    line-height: 200%;
+    border-radius: 20%;
+}

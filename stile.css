@@ -143,3 +143,36 @@ td,th,tr{
     float: right;
     max-height: 60%;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #43637a;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color:white;
+    color:#43637a;
+}
+
+li a:hover:not(.active) {
+    background-color: #afcce6;
+    color: white;
+}
+div.stats{
+    margin-left:25%;
+    padding:1px 16px;
+    height:1000px;
+}

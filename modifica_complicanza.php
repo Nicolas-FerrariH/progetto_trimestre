@@ -42,6 +42,9 @@ $dp=$compintera["dataPosizionamento"];
 
                 <button type="submit">Modifica Complicanza</button><br>
             </form>
+            <br>
+            <a class="elimina" href="elimina_complicanza.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dc=<?=$dc?>&dp=<?=$dp?>">Elimina complicanza</a>
+        
         </div>
         
     </body>

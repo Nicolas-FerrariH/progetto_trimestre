@@ -58,6 +58,9 @@ $dp=$medicazioneintera["dataPosizionamento"];
 
                 <button type="submit">Modifica Medicazione</button><br>
             </form>
+            <br>
+            <a class="elimina" href="elimina_medicazione.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dm=<?=$dm?>&dp=<?=$dp?>">Elimina Medicazione</a>
+        
         </div>
         
     </body>

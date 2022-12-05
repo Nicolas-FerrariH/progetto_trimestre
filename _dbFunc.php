@@ -113,7 +113,6 @@ function ricercaidpicc($conn,$tipo){
     $sql="SELECT idPicc FROM picc where tipo='$tipo'";
     $result=$conn->query($sql);
     $res=$result->fetch_assoc();
-    var_dump($res);
     $numeropicc= implode("", $res);
     return $numeropicc;
 }
@@ -197,4 +196,30 @@ function SelectAllPICC($conn,$idP)
 
     $rows=$result-> fetch_all(MYSQLI_ASSOC);
     return $rows;
+}
+function delete_picc($conn, $idP,$idPicc,$dp){
+    $sql="DELETE FROM applicazione where idP='$idP' and idPicc='$idPicc' and dataPosizionamento='$dp'";
+
+    $result=$conn->query($sql);
+}
+function delete_med($conn, $idP,$idPicc,$dm){
+    $sql="DELETE FROM medicazione WHERE idP = '$idP' AND idPicc = '$idPicc' AND dataMedicazione = '$dm'";
+    
+    $result=$conn->query($sql);
+}
+function delete_comp($conn, $idP,$idPicc,$dc){
+    $sql="DELETE FROM complicanza WHERE idP = '$idP' AND idPicc = '$idPicc' AND dataComplicanza = '$dc'";
+    
+    $result=$conn->query($sql);
+}
+
+
+
+function conta_mot_rim($conn,$mot){
+    
+    $sql="SELECT count(*) FROM applicazione WHERE causarimozione='$mot' group by causarimozione";
+    $result=$conn->query($sql);
+    $res=$result->fetch_assoc();
+    $numcause= implode("", $res);
+    return $numcause;
 }

@@ -55,6 +55,8 @@ $motivo=$interaapp["causarimozione"];
                 <input type="hidden" name="idP" value="<?=$idP?>"><br>
                 <button type="submit">Modifica Picc</button><br>
             </form>
+            <br>
+            <a class="elimina" href="elimina_picc.php?idP=<?=$idP?>&idPicc=<?=$idPicc?>&dp=<?=$dp?>">Elimina questo picc</a>
         </div>
         
     </body>

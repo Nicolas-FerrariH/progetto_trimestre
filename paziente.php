@@ -53,7 +53,7 @@ $picc=SelectAllPICC($conn,$id);
                     <a href="picc.php?idP=<?=$id?>&idPicc=<?=$pp["idPicc"]?>&dp=<?=$pp["dataPosizionamento"]?>"><?=$pp["causarimozione"]?></a>
                     </td>
                     <td>
-                    <a href="modifica_picc.php?idP=<?=$id?>&idPicc=<?=$pp["idPicc"]?>&dp=<?=$pp["dataPosizionamento"]?>">Modifica</a>
+                    <a href="modifica_picc.php?idP=<?=$id?>&idPicc=<?=$pp["idPicc"]?>&dp=<?=$pp["dataPosizionamento"]?>">Modifica o elimina</a>
                     </td>
                 </tr>
                 <?php }?>
