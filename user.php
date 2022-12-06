@@ -22,7 +22,7 @@ $conn=db_connect();
 
         <div id="picc" class="stats">
             <h1>Statistiche PICC</h1>
-            
+            <canvas id="chartPicc" style="width:100%;"></canvas>
         </div>
 
         <div id="med" class="stats">
@@ -36,25 +36,44 @@ $conn=db_connect();
 
 
 <script>
-    var xValues = ["fine uso","complicanze infettive","tromboflebiti","malfunzionamento","dislocazione accidentale"];
-    var yValues = [<?=conta_mot_rim($conn,'fine uso')?>, 
+    var xValuesComp = ["fine uso","complicanze infettive","tromboflebiti","malfunzionamento","dislocazione accidentale"];
+    var yValuesComp = [<?=conta_mot_rim($conn,'fine uso')?>, 
                     <?=conta_mot_rim($conn,'complicanze infettive')?>,
                     <?=conta_mot_rim($conn,'tromboflebiti')?>, 
                     <?=conta_mot_rim($conn,'malfunzionamento')?>, 
                     <?=conta_mot_rim($conn,'dislocazione accidentale')?>,0];
-    var barColors = ["blue","blue","blue","blue","blue"];
+    var barColorsComp = ["blue","blue","blue","blue","blue"];
 
     new Chart("chartComp", {
         type: "bar",
         data: {
-            labels: xValues,
-            datasets: [{backgroundColor: barColors,data: yValues}]
+            labels: xValuesComp,
+            datasets: [{backgroundColor: barColorsComp,data: yValuesComp}]
         },
         options: {
             legend: {display: false},
             title: {
                 display: true,
                 text: "PICC rimossi per ogni motivazione"
+            }
+        }
+    });
+
+    var xValuesPicc = ["meno di 3 mesi","tra i 3 e i 6 mesi","più di 6 mesi "];
+    var yValuesPicc = [];
+    var barColorsPicc = ["blue","blue","blue","blue","blue"];
+
+    new Chart("chartPicc", {
+        type: "bar",
+        data: {
+            labels: xValuesPicc,
+            datasets: [{backgroundColor: barColorsPicc,data: yValuesPicc}]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Quanti Picc per ogni durata"
             }
         }
     });
