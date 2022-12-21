@@ -130,7 +130,7 @@ td,th,tr{
 
 .table_med{
     position: relative;
-    width: 49%;
+    width: 40%;
     overflow-y: auto;
     float: left;
     max-height: 60%;
@@ -138,7 +138,7 @@ td,th,tr{
 
 .table_comp{
     position: relative;
-    width: 49%;
+    width: 40%;
     overflow-y: auto;
     float: right;
     max-height: 60%;
