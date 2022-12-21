@@ -7,4 +7,5 @@
     <body>
         <div class="nav_admin">
             <a href="admin.php"><img src="img/casetta.jpg" alt=""></a>
+            
         </div>
